@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Diario de Síntomas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div id="install-banner" class="install-banner">
+        <div class="banner-content">
+            <span class="banner-icon">📱</span>
+            <div class="banner-text">
+                <h3>Instalar Aplicación</h3>
+                <p>Accede al diario sin conexión y directo desde tu pantalla de inicio.</p>
+            </div>
+        </div>
+        <div class="banner-actions">
+            <button id="btn-cancel-install" class="btn-banner-secondary">Ahora no</button>
+            <button id="btn-install-now" class="btn-banner-primary">Instalar</button>
+        </div>
+    </div>
+
+    <header class="app-header">
+        <h1>🩺 Diario de Síntomas</h1>
+        <p class="subtitle">Monitoreo Clínico Personal</p>
+    </header>
+
+    <main class="app-container">
+        <section class="card form-section">
+            <h2>Registrar Nuevo Evento</h2>
+            <form id="sintoma-form">
+                <label for="sintoma-input">¿Qué síntoma o molestia experimenta ahora?</label>
+                <input 
+                    type="text" 
+                    id="sintoma-input" 
+                    placeholder="Ej. Fiebre 38.5°C, Dolor de cabeza leve..." 
+                    required
+                >
+                <button type="submit" class="btn-submit">Guardar Registro</button>
+            </form>
+        </section>
+
+        <section class="card list-section">
+            <h2>Historial de Registros</h2>
+            <p class="info-text">Los datos se almacenan localmente en este dispositivo.</p>
+            <ul id="sintomas-lista" class="sintomas-list">
+                <li class="empty-state">No hay síntomas registrados hoy.</li>
+            </ul>
+        </section>
+
+    </main>
+
+
+    <footer class="app-footer">
+        <p>Magíster en Informática Médica · Computación II</p>
+    </footer>
+</body>
+</html>

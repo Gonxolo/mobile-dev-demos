@@ -1,0 +1,16 @@
+{
+  "name": "VisionCare IA Clasificador",
+  "short_name": "VisionCareIA",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a7cff",
+  "description": "Clasificación de imágenes basada en redes neuronales convolucionales en el borde.",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3004/3004613.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

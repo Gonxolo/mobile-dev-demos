@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionCare IA - Clasificador</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div id="install-banner" class="install-banner">
+        <div class="banner-content">
+            <span class="banner-icon">📸</span>
+            <div class="banner-text">
+                <h3>Instalar VisionCare IA</h3>
+                <p>Clasifica y analiza imágenes médicas en terreno de forma offline.</p>
+            </div>
+        </div>
+        <div class="banner-actions">
+            <button id="btn-cancel-install" class="btn-banner-secondary">Ahora no</button>
+            <button id="btn-install-now" class="btn-banner-primary">Instalar</button>
+        </div>
+    </div>
+
+    <header class="app-header">
+        <h1>📸 VisionCare IA</h1>
+        <p class="subtitle">Clasificación Local de Imágenes</p>
+    </header>
+
+    <main class="app-container">
+        <section class="card ai-section">
+            <h2>Captura o Sube una Imagen</h2>
+            <p class="info-text">Toma una foto con la cámara de tu celular. El análisis se realiza localmente resguardando la privacidad del paciente.</p>
+            
+            <div class="file-select-container">
+                <label for="image-selector" class="btn-file-label">📸 Capturar Fotografía</label>
+                <input type="file" id="image-selector" accept="image/*" capture="camera" style="display: none;">
+            </div>
+
+            <div class="image-preview-container">
+                <img id="selected-image" alt="Previsualización clínica" style="display: none;">
+            </div>
+        </section>
+
+        <section class="card results-section">
+            <h2>Resultado del Análisis Neuronal</h2>
+            <div id="ai-status" class="ai-status">Iniciando sistema...</div>
+            <div id="prediction-result" class="prediction-result"></div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>Magíster en Informática Médica · Computación II (TensorFlow Edge)</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

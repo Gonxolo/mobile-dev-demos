@@ -1,0 +1,244 @@
+/* Variables de diseño clínico */
+:root {
+    --primary-color: #0a7cff;
+    --background-bg: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-bg);
+    color: var(--text-color);
+    line-height: 1.5;
+    padding-bottom: 60px;
+}
+
+/* Encabezado */
+.app-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.app-header h1 {
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Contenedor Adaptable (Mobile-first) */
+.app-container {
+    padding: 15px;
+    max-width: 600px;
+    margin: 0 auto; /* Centrado en pantallas grandes (Tablets/Desktop) */
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+/* Formularios accesibles */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px; /* Tamaño táctil óptimo */
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+}
+
+/* Botón adaptable */
+.btn-submit {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px; /* Mínimo 44px de alto para dedos cómodos */
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:active {
+    background-color: #0056b3;
+}
+
+/* Lista de síntomas */
+.info-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.sintomas-list {
+    list-style: none;
+}
+
+.sintomas-list li {
+    background: #f8f9fa;
+    padding: 12px 15px;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.sintomas-list .empty-state {
+    border-left: none;
+    background: transparent;
+    color: #999;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Pie de página */
+.app-footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #888;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: var(--background-bg);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   💥 NUEVOS ESTILOS: BANNER DE INSTALACIÓN PWA
+   ========================================================================== */
+
+.install-banner {
+    display: none; /* Se activa mediante JavaScript cambiando a 'flex' o 'block' */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    width: calc(100% - 30px);
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    z-index: 9999;
+    box-sizing: border-box;
+    border: 1px solid rgba(10, 124, 255, 0.1);
+    animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.banner-icon {
+    font-size: 2rem;
+    background: #e6f2ff;
+    padding: 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-text h3 {
+    font-size: 1.05rem;
+    color: #111111;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+
+.banner-text p {
+    font-size: 0.85rem;
+    color: #666666;
+    line-height: 1.3;
+}
+
+.banner-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Botones del Banner */
+.btn-banner-primary, .btn-banner-secondary {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-banner-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-banner-primary:active {
+    background-color: #0056b3;
+    transform: scale(0.98);
+}
+
+.btn-banner-secondary {
+    background-color: #f0f2f5;
+    color: #555555;
+}
+
+.btn-banner-secondary:active {
+    background-color: #e4e6e9;
+    transform: scale(0.98);
+}
+
+/* Animación de entrada suave desde abajo */
+@keyframes slideUp {
+    to {
+        transform: translateX(-50%) translateY(0);
+    }
+}

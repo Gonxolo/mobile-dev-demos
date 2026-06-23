@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin Conexión - EvalMobility IA</title>
+    <style>
+        body {
+            font-family: -apple-system, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        .btn-retry {
+            background-color: #0a7cff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon">📡❌</div>
+    <h1>Modo fuera de línea</h1>
+    <p>No tienes una conexión a internet activa en este momento. El modelo de IA necesita haberse cargado al menos una vez con conexión para poder usarse sin internet.</p>
+    
+    <button onclick="window.location.reload()" class="btn-retry">Reintentar Conexión</button>
+</body>
+</html>

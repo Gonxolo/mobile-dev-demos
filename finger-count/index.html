@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvalMobility IA - Kinesiología</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div id="install-banner" class="install-banner">
+        <div class="banner-content">
+            <span class="banner-icon">🤖</span>
+            <div class="banner-text">
+                <h3>Instalar App de IA</h3>
+                <p>Evalúa el rango de movilidad de tus pacientes sin internet.</p>
+            </div>
+        </div>
+        <div class="banner-actions">
+            <button id="btn-cancel-install" class="btn-banner-secondary">Ahora no</button>
+            <button id="btn-install-now" class="btn-banner-primary">Instalar</button>
+        </div>
+    </div>
+
+    <header class="app-header">
+        <h1>🖐️ EvalMobility IA</h1>
+        <p class="subtitle">Asistente de Rehabilitación Computacional</p>
+    </header>
+
+    <main class="app-container">
+        <section class="card ai-section">
+            <h2>Análisis de Movilidad en Tiempo Real</h2>
+            <p class="info-text">La privacidad está garantizada: el video se procesa 100% de forma interna en el dispositivo.</p>
+            
+            <div class="video-container">
+                <video id="webcam" autoplay playsinline></video>
+                <canvas id="output_canvas"></canvas>
+            </div>
+            
+            <div id="ai-status" class="ai-status">Iniciando entorno clínico...</div>
+        </section>
+
+        <section class="card metrics-section">
+            <h2>Métricas Detectadas</h2>
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <span class="metric-label">Estado de Mano</span>
+                    <span id="metric-hand-present" class="metric-value">No Detectada</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Dedos Extendidos</span>
+                    <span id="metric-fingers-count" class="metric-value">-</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>Magíster en Informática Médica · Computación II (IA Edge)</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "EvalMobility IA Kinesiología",
+  "short_name": "EvalIA",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00aa6c",
+  "description": "Herramienta de visión artificial móvil para evaluación de movilidad.",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3063/3063176.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
