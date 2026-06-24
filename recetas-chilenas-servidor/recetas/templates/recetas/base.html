@@ -1,0 +1,32 @@
+{% load static %}<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% block titulo %}Recetas Chilenas{% endblock %}</title>
+  <meta name="theme-color" content="#c1272d">
+  <meta name="description" content="Recetario chileno con cantidades que se adaptan a las porciones y al sistema de medida que prefieras.">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1830/1830839.png">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/1830/1830839.png">
+  <link rel="stylesheet" href="{% static 'recetas/styles.css' %}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="topbar__brand" href="{% url 'lista_recetas' %}">
+      <span aria-hidden="true">🇨🇱</span> Recetas Chilenas
+    </a>
+    <span class="topbar__tagline">cantidades a tu medida</span>
+  </header>
+
+  <main class="contenedor">
+    {% block contenido %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    Demo educativa de Django + PWA — convierte unidades y escala porciones, todo en el navegador.
+  </footer>
+
+  <script src="{% static 'recetas/recetas.js' %}"></script>
+</body>
+</html>

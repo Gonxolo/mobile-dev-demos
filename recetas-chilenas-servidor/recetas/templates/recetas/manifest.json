@@ -1,0 +1,24 @@
+{
+  "name": "Recetas Chilenas",
+  "short_name": "Recetas CL",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fdf6ec",
+  "theme_color": "#c1272d",
+  "description": "Recetario chileno con cantidades que se adaptan a las porciones y al sistema de medida que prefieras.",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1830/1830839.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1830/1830839.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

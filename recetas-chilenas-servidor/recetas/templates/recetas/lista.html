@@ -1,0 +1,43 @@
+{% extends "recetas/base.html" %}
+
+{% block titulo %}Recetas Chilenas{% endblock %}
+
+{% block contenido %}
+  <form class="filtros" method="get">
+    <input
+      class="filtros__buscar"
+      type="search"
+      name="q"
+      placeholder="Buscar receta…"
+      value="{{ busqueda }}"
+    >
+    <div class="filtros__categorias">
+      <a
+        href="{% url 'lista_recetas' %}{% if busqueda %}?q={{ busqueda }}{% endif %}"
+        class="chip {% if not categoria_actual %}chip--activo{% endif %}"
+      >Todas</a>
+      {% for valor, etiqueta in categorias %}
+        <a
+          href="?categoria={{ valor }}{% if busqueda %}&q={{ busqueda }}{% endif %}"
+          class="chip {% if categoria_actual == valor %}chip--activo{% endif %}"
+        >{{ etiqueta }}</a>
+      {% endfor %}
+    </div>
+  </form>
+
+  {% if recetas %}
+    <div class="grilla">
+      {% for receta in recetas %}
+        <a class="tarjeta" href="{{ receta.get_absolute_url }}">
+          <span class="tarjeta__emoji" aria-hidden="true">{{ receta.emoji }}</span>
+          <h2 class="tarjeta__nombre">{{ receta.nombre }}</h2>
+          <p class="tarjeta__meta">
+            {{ receta.get_categoria_display }} · ⏱ {{ receta.tiempo_preparacion_min }} min · 🍽 {{ receta.porciones_base }} porciones
+          </p>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="vacio">No hay recetas que coincidan con tu búsqueda.</p>
+  {% endif %}
+{% endblock %}

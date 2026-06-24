@@ -1,0 +1,60 @@
+{% extends "recetas/base.html" %}
+
+{% block titulo %}{{ receta.nombre }} — Recetas Chilenas{% endblock %}
+
+{% block contenido %}
+  <a class="volver" href="{% url 'lista_recetas' %}">&larr; Todas las recetas</a>
+
+  <article class="receta">
+    <header class="receta__header">
+      <span class="receta__emoji" aria-hidden="true">{{ receta.emoji }}</span>
+      <div>
+        <h1>{{ receta.nombre }}</h1>
+        <p class="receta__meta">
+          {{ receta.get_categoria_display }} · ⏱ {{ receta.tiempo_preparacion_min }} min
+        </p>
+        {% if receta.descripcion %}<p class="receta__descripcion">{{ receta.descripcion }}</p>{% endif %}
+      </div>
+    </header>
+
+    <section class="panel panel--controles">
+      <div class="control">
+        <label for="porciones">Porciones</label>
+        <div class="stepper">
+          <button type="button" id="porciones-menos" aria-label="Menos porciones">−</button>
+          <span id="porciones-valor">{{ receta.porciones_base }}</span>
+          <button type="button" id="porciones-mas" aria-label="Más porciones">+</button>
+        </div>
+      </div>
+
+      <div class="control" data-control-tipo="volumen" hidden>
+        <label for="select-volumen">Medir volumen en</label>
+        <select id="select-volumen"></select>
+      </div>
+
+      <div class="control" data-control-tipo="masa" hidden>
+        <label for="select-masa">Medir masa en</label>
+        <select id="select-masa"></select>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Ingredientes</h2>
+      <ul class="ingredientes" id="lista-ingredientes"></ul>
+      <noscript>
+        <p class="vacio">Activa JavaScript para escalar porciones y convertir unidades.</p>
+      </noscript>
+    </section>
+
+    <section class="panel">
+      <h2>Preparación</h2>
+      <ol class="pasos">
+        {% for paso in receta.lista_pasos %}
+          <li>{{ paso }}</li>
+        {% endfor %}
+      </ol>
+    </section>
+  </article>
+
+  {{ datos_js|json_script:"datos-receta" }}
+{% endblock %}

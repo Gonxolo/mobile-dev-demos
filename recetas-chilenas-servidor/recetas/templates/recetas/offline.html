@@ -1,0 +1,13 @@
+{% extends "recetas/base.html" %}
+
+{% block titulo %}Sin conexión — Recetas Chilenas{% endblock %}
+
+{% block contenido %}
+  <div class="vacio">
+    <p style="font-size: 3rem;">📡</p>
+    <h2>Sin conexión</h2>
+    <p>No pudimos cargar esta página y todavía no está guardada para verla sin internet.</p>
+    <p>Las recetas que ya visitaste antes sí quedan disponibles offline.</p>
+    <p><a href="{% url 'lista_recetas' %}">Volver al inicio</a></p>
+  </div>
+{% endblock %}
